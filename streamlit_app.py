@@ -210,7 +210,13 @@ def display_players_by_nationality(df_arrivals):
 
     # Calculate the number of players and the average age
     num_players = len(players_of_selected_nationality)
-    avg_age = players_of_selected_nationality['Age'].mean()
+    
+    # Check if 'Age' column contains only numeric values
+    if pd.to_numeric(players_of_selected_nationality['Age'], errors='coerce').notna().all():
+        avg_age = players_of_selected_nationality['Age'].mean()
+        st.markdown(f'<p style="color:green;">Average age: {avg_age:.2f}</p>', unsafe_allow_html=True)
+    else:
+        st.markdown(f'<p style="color:red;">Average age could not be calculated due to non-numeric values.</p>', unsafe_allow_html=True)
 
     # Display the number of players and the average age
     st.markdown(f'<p style="color:green;">Number of players: {num_players}</p>', unsafe_allow_html=True)
