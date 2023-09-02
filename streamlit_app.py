@@ -536,9 +536,10 @@ def app():
         'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_arrivals_2019.xlsx',
         'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_arrivals_2020.xlsx',
         'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_arrivals_2021.xlsx',
-        'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_arrivals_2022.xlsx'
+        'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_arrivals_2022.xlsx',
+        'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_arrivals_2023.xlsx'
     ]
-    seasons = range(2016, 2023)
+    seasons = range(2016, 2024)
 
     if selection == 'Arrivals':
         st.header(f"{Competition_name} | Arrivals Analysis")
@@ -561,7 +562,8 @@ def app():
             'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_departures_2019.xlsx',
             'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_departures_2020.xlsx',
             'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_departures_2021.xlsx',
-            'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_departures_2022.xlsx'
+            'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_departures_2022.xlsx',
+            'https://raw.githubusercontent.com/Mozi333/Elitesserien/main/data/eliteserien_departures_2023.xlsx'
         ]
         df_departures = load_and_process_departure_data(departure_file_paths, seasons)
         selected_season_departures = sidebar_filters(df_departures, 'Departures')
